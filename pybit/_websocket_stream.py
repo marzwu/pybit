@@ -334,6 +334,9 @@ class _V5WebSocketManager(_WebSocketManager):
             if topic in self.standard_private_topics:
                 # private topics do not support filters
                 return [topic]
+            if topic in self.other_private_topics:
+                # private topics do not support filters
+                return [topic]
 
             topics = []
             for single_symbol in list_of_symbols:
